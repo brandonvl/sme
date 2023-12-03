@@ -1,2 +1,2 @@
-# sme
-Sarene Map Editor
+# Sarene Map Editor
+

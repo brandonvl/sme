@@ -1,11 +1,58 @@
-CMakeLists.txt.user
+# Ignore build directory
+/build/
+
+# Ignore CMake generated files
 CMakeCache.txt
-CMakeFiles
-CMakeScripts
-Testing
+CMakeFiles/
+CMakeScripts/
+*.cmake
 Makefile
-cmake_install.cmake
-install_manifest.txt
-compile_commands.json
-CTestTestfile.cmake
-_deps
+*.make
+
+# Ignore compiled files
+*.o
+*.so
+*.ko
+*.a
+*.mod
+*.mod.c
+*.lo
+
+# Ignore executables
+*.out
+*.exe
+*.dll
+*.dylib
+
+# Ignore IDE/project files
+.idea/
+*.swp
+*.swo
+*.swn
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.sln.ide/
+
+# Ignore other files
+*.log
+*.tmp
+*.tmp.*
+log.txt
+*.txt
+*.tar.* 
+*.zip
+*.tar.gz
+*.rar
+*.tar
+*.7z
+
+# Ignore OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
