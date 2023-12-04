@@ -40,7 +40,6 @@ Makefile
 *.tmp
 *.tmp.*
 log.txt
-*.txt
 *.tar.* 
 *.zip
 *.tar.gz
