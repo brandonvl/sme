@@ -10,6 +10,12 @@ set(GLFW_BUILD_TESTS OFF CACHE INTERNAL "Build the GLFW test programs")
 set(GLFW_BUILD_DOCS OFF CACHE INTERNAL "Build the GLFW documentation")
 add_subdirectory(extern/glfw)
 
+# Add GLM as a subdirectory so its CMake file gets executed
+add_subdirectory(extern/glm)
+
+# Add spdlog as a subdirectory so its CMake file gets executed
+add_subdirectory(extern/spdlog)
+
 # Add ImGui source files to your project
 file(GLOB IMGUI_SOURCES ${PROJECT_SOURCE_DIR}/extern/imgui/*.cpp ${PROJECT_SOURCE_DIR}/extern/imgui/backends/imgui_impl_glfw.cpp ${PROJECT_SOURCE_DIR}/extern/imgui/backends/imgui_impl_opengl3.cpp)
 add_library(imgui ${IMGUI_SOURCES})
@@ -21,13 +27,13 @@ target_include_directories(imgui PUBLIC ${PROJECT_SOURCE_DIR}/extern/imgui)
 target_include_directories(imgui PUBLIC ${PROJECT_SOURCE_DIR}/extern/glfw/include)
 
 # Add GLAD source file to your executable target
-add_executable(sme src/main.cpp ${PROJECT_SOURCE_DIR}/extern/glad/src/glad.c)
+add_executable(sme src/main.cpp ${PROJECT_SOURCE_DIR}/extern/glad/src/glad.c src/spritereader.h)
 
 # Include GLAD headers
 target_include_directories(sme PRIVATE ${PROJECT_SOURCE_DIR}/extern/glad/include)
 
-# Link ImGui and GLFW to your executable
-target_link_libraries(sme imgui glfw)
+# Link ImGui, GLFW, GLM, and spdlog to your executable
+target_link_libraries(sme imgui glfw glm spdlog::spdlog)
 
 include(CTest)
 enable_testing()
