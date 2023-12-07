@@ -1,14 +1,14 @@
-[submodule "extern/imgui"]
-	path = extern/imgui
-	url = https://github.com/ocornut/imgui.git
-	branch = docking
-[submodule "extern/glfw"]
-	path = extern/glfw
-	url = https://github.com/glfw/glfw.git
-	branch = 3.3-stable
-[submodule "extern/glm"]
-	path = extern/glm
-	url = https://github.com/g-truc/glm.git
-[submodule "extern/spdlog"]
-	path = extern/spdlog
-	url = https://github.com/gabime/spdlog.git
+[submodule "Sarene/extern/imgui"]
+    path = Sarene/extern/imgui
+    url = https://github.com/ocornut/imgui.git
+    branch = docking
+[submodule "Sarene/extern/glfw"]
+    path = Sarene/extern/glfw
+    url = https://github.com/glfw/glfw.git
+    branch = 3.3-stable
+[submodule "Sarene/extern/glm"]
+    path = Sarene/extern/glm
+    url = https://github.com/g-truc/glm.git
+[submodule "Sarene/extern/spdlog"]
+    path = Sarene/extern/spdlog
+    url = https://github.com/gabime/spdlog.git
