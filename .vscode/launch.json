@@ -5,7 +5,7 @@
             "name": "Debug (cl) Launch",
             "type": "cppvsdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/build/Debug/sme",
+            "program": "${workspaceFolder}/build/SME/Debug/sme",
             "args": [],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
