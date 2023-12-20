@@ -8,7 +8,7 @@
             "program": "${workspaceFolder}/build/SME/Debug/sme",
             "args": [],
             "stopAtEntry": false,
-            "cwd": "${workspaceFolder}",
+            "cwd": "${workspaceFolder}/build/SME/Debug",
             "environment": [],
             "console": "newExternalWindow",
             "preLaunchTask": "debug build"

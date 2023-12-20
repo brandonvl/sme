@@ -1,6 +1,15 @@
 # Add your executable
 add_executable(sme src/SMEApp.cpp)
 
+# Get all files in the assets directory
+file(GLOB_RECURSE ASSETS_FILES CONFIGURE_DEPENDS "SME/assets/*")
+
+# Custom command to copy assets directory
+add_custom_command(TARGET sme POST_BUILD
+                   COMMAND ${CMAKE_COMMAND} -E copy_directory
+                   "${CMAKE_SOURCE_DIR}/SME/assets" "$<TARGET_FILE_DIR:sme>/assets"
+                   DEPENDS ${ASSETS_FILES})
+
 # Link Sarene library to your executable
 target_link_libraries(sme Sarene)
 

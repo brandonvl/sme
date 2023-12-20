@@ -11,6 +11,7 @@
 #include "Sarene/Input.h"
 #include "Sarene/KeyCodes.h"
 #include "Sarene/MouseButtonCodes.h"
+#include "Sarene/OrthographicCameraController.h"
 
 #include "Sarene/ImGui/ImGuiLayer.h"
 

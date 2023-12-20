@@ -43,6 +43,7 @@ set(SARENE_SOURCES
     src/Sarene/Layer.cpp
     src/Sarene/LayerStack.cpp
     src/Sarene/Log.cpp
+    src/Sarene/OrthographicCameraController.cpp
     
     # Core files
 
@@ -73,7 +74,10 @@ set(SARENE_SOURCES
     src/Sarene/Renderer/RendererAPI.cpp
     src/Sarene/Renderer/Shader.cpp
     src/Sarene/Renderer/Texture.cpp
-    src/Sarene/Renderer/VertexArray.cpp    
+    src/Sarene/Renderer/VertexArray.cpp
+    
+    # stb_image files
+    extern/stb_image/stb_image.cpp
 )
 
 add_library(Sarene STATIC ${SARENE_SOURCES}) # Replace with actual source files
@@ -86,7 +90,7 @@ target_link_libraries(Sarene imgui glfw glm spdlog glad)
 
 # Include directories for Sarene library
 target_include_directories(Sarene PUBLIC extern/imgui)
-#target_include_directories(Sarene PUBLIC extern/glad/include)
+target_include_directories(Sarene PUBLIC extern/stb_image)
 target_include_directories(Sarene PUBLIC extern/spdlog/include)
 
 # Include root directory
