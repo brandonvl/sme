@@ -13,7 +13,7 @@
 #include <unordered_map>
 #include <unordered_set>
 
-#include "Sarene/Log.h"
+#include "Sarene/Core/Log.h"
 
 #ifdef SAR_PLATFORM_WINDOWS
 	#include <Windows.h>

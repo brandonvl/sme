@@ -1,4 +1,6 @@
 #include "Sarene.h"
+#include "Sarene/Core/EntryPoint.h"
+
 #include "Platform/OpenGL/OpenGLShader.h"
 
 #include "imgui.h"

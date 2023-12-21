@@ -2,15 +2,15 @@
 
 // For use by Sarene applications
 
-#include "Sarene/Application.h"
-#include "Sarene/Layer.h"
-#include "Sarene/Log.h"
+#include "Sarene/Core/Application.h"
+#include "Sarene/Core/Layer.h"
+#include "Sarene/Core/Log.h"
 
 #include "Sarene/Core/Timestep.h"
 
-#include "Sarene/Input.h"
-#include "Sarene/KeyCodes.h"
-#include "Sarene/MouseButtonCodes.h"
+#include "Sarene/Core/Input.h"
+#include "Sarene/Core/KeyCodes.h"
+#include "Sarene/Core/MouseButtonCodes.h"
 #include "Sarene/OrthographicCameraController.h"
 
 #include "Sarene/ImGui/ImGuiLayer.h"
@@ -25,8 +25,4 @@
 #include "Sarene/Renderer/VertexArray.h"
 
 #include "Sarene/Renderer/OrthographicCamera.h"
-// -----------------------------------
-
-// -- Entry point --------------------
-#include "Sarene/EntryPoint.h"
 // -----------------------------------

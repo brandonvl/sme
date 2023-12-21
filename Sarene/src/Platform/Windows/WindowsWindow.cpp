@@ -50,7 +50,7 @@ namespace Sarene
 
 		m_Window = glfwCreateWindow((int)m_Data.Width, (int)m_Data.Height, m_Data.Title.c_str(), nullptr, nullptr);
 
-		m_Context = new OpenGLContext(m_Window);
+		m_Context = CreateScope<OpenGLContext>(m_Window);
 		m_Context->Init();
 
 		glfwSetWindowUserPointer(m_Window, &m_Data);
@@ -151,7 +151,6 @@ namespace Sarene
 	void WindowsWindow::Shutdown()
 	{
 		glfwDestroyWindow(m_Window);
-		delete m_Context;
 	}
 
 	void WindowsWindow::OnUpdate()

@@ -47,6 +47,6 @@ namespace Sarene
 
 
 		private:
-			static Input* s_Instance;
+			static Scope<Input> s_Instance;
 	};
 }

@@ -4,11 +4,11 @@
 
 #include "Window.h"
 #include "LayerStack.h"
-#include "Events/Event.h"
-#include "Events/ApplicationEvent.h"
+#include "Sarene/Events/Event.h"
+#include "Sarene/Events/ApplicationEvent.h"
 
-#include "Core/Timestep.h"
-#include "ImGui/ImGuiLayer.h"
+#include "Timestep.h"
+#include "Sarene/ImGui/ImGuiLayer.h"
 
 namespace Sarene
 {

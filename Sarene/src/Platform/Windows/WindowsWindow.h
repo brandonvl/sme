@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Sarene/Window.h"
+#include "Sarene/Core/Window.h"
 #include "Sarene/Renderer/GraphicsContext.h"
 
 #include "glfw/glfw3.h"
@@ -43,7 +43,7 @@ namespace Sarene
 		virtual void Shutdown();
 
 		GLFWwindow* m_Window;
-		GraphicsContext* m_Context;
+		Scope<GraphicsContext> m_Context;
 
 		struct WindowData
 		{

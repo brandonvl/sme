@@ -1,12 +1,12 @@
 #include "sarpch.h"
 #include "WindowsInput.h"
 
-#include "Sarene/Application.h"
+#include "Sarene/Core/Application.h"
 #include <GLFW/glfw3.h>
 
 namespace Sarene
 {
-	Input* Input::s_Instance = new WindowsInput();
+	Scope<Input> Input::s_Instance = CreateScope<WindowsInput>();
 
 	bool WindowsInput::IsKeyPressedImpl(int keycode)
 	{

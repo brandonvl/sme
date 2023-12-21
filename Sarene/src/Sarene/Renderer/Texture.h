@@ -2,7 +2,7 @@
 
 #include <string>
 
-#include "Sarene/Core.h"
+#include "Sarene/Core/Core.h"
 
 namespace Sarene
 {

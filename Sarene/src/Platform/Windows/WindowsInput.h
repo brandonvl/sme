@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Sarene/Input.h"
+#include "Sarene/Core/Input.h"
 
 namespace Sarene
 {

@@ -1,8 +1,8 @@
 #include "sarpch.h"
 #include "OrthographicCameraController.h"
 
-#include "Sarene/Input.h"
-#include "Sarene/KeyCodes.h"
+#include "Sarene/Core/Input.h"
+#include "Sarene/Core/KeyCodes.h"
 
 namespace Sarene
 {

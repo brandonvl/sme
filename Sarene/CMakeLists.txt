@@ -38,14 +38,12 @@ set(SARENE_SOURCES
     # Precompiled header
     src/sarpch.cpp
 
-    # Root files
-    src/Sarene/Application.cpp
-    src/Sarene/Layer.cpp
-    src/Sarene/LayerStack.cpp
-    src/Sarene/Log.cpp
-    src/Sarene/OrthographicCameraController.cpp
-    
     # Core files
+    src/Sarene/Core/Application.cpp
+    src/Sarene/Core/Layer.cpp
+    src/Sarene/Core/LayerStack.cpp
+    src/Sarene/Core/Log.cpp
+    src/Sarene/OrthographicCameraController.cpp
 
     # Events files
 
@@ -95,3 +93,9 @@ target_include_directories(Sarene PUBLIC extern/spdlog/include)
 
 # Include root directory
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/src)
+
+target_compile_definitions(Sarene PRIVATE 
+    _CRT_SECURE_NO_WARNINGS
+    _SILENCE_ALL_MS_EXT_DEPRECATION_WARNINGS
+    $<$<CONFIG:Debug>:SAR_DEBUG>
+)
