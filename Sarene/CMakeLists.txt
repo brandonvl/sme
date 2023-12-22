@@ -69,6 +69,7 @@ set(SARENE_SOURCES
     src/Sarene/Renderer/OrthographicCamera.cpp
     src/Sarene/Renderer/RenderCommand.cpp
     src/Sarene/Renderer/Renderer.cpp
+    src/Sarene/Renderer/Renderer2D.cpp
     src/Sarene/Renderer/RendererAPI.cpp
     src/Sarene/Renderer/Shader.cpp
     src/Sarene/Renderer/Texture.cpp

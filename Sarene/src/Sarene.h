@@ -17,6 +17,7 @@
 
 // ---Renderer------------------------
 #include "Sarene/Renderer/Renderer.h"
+#include "Sarene/Renderer/Renderer2D.h"
 #include "Sarene/Renderer/RenderCommand.h"
 
 #include "Sarene/Renderer/Buffer.h"

@@ -8,6 +8,8 @@
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
 
+#include "EditorLayer.h"
+
 namespace Sarene
 {
     class ExampleLayer : public Layer
@@ -16,7 +18,7 @@ namespace Sarene
             ExampleLayer()
             : Layer("Example"), m_CameraController(1280.0f / 720.0f)
             {
-                m_VertexArray.reset(VertexArray::Create());
+                m_VertexArray = VertexArray::Create();
 
                 float vertices[3 * 7] = {
                     -0.5f, -0.5f, 0.0f, 1.0f, 0.0f, 1.0f, 1.0f,
@@ -25,7 +27,7 @@ namespace Sarene
                 };
 
                 Ref<VertexBuffer> vertexBuffer;
-                vertexBuffer.reset(VertexBuffer::Create(vertices, sizeof(vertices)));
+                vertexBuffer = VertexBuffer::Create(vertices, sizeof(vertices));
 
                 BufferLayout layout = {
                     { ShaderDataType::Float3, "a_Position" },
@@ -37,10 +39,10 @@ namespace Sarene
 
                 unsigned int indices[3] = { 0, 1, 2 };
                 Ref<IndexBuffer> indexBuffer;
-                indexBuffer.reset(IndexBuffer::Create(indices, sizeof(indices) / sizeof(uint32_t)));
+                indexBuffer = IndexBuffer::Create(indices, sizeof(indices) / sizeof(uint32_t));
                 m_VertexArray->SetIndexBuffer(indexBuffer);
 
-                m_SquareVA.reset(VertexArray::Create());
+                m_SquareVA = VertexArray::Create();
 
                 float squareVertices[5 * 4] = {
                     -0.75f, -0.75f, 0.0f, 0.0f, 0.0f,
@@ -50,7 +52,7 @@ namespace Sarene
                 };
 
                 Ref<VertexBuffer> squareVB;
-                squareVB.reset(VertexBuffer::Create(squareVertices, sizeof(squareVertices)));
+                squareVB = VertexBuffer::Create(squareVertices, sizeof(squareVertices));
                 squareVB->SetLayout({
                         { ShaderDataType::Float3, "a_Position" },
                         { ShaderDataType::Float2, "a_TexCoord" }
@@ -59,7 +61,7 @@ namespace Sarene
 
                 uint32_t squareIndices[6] = { 0, 1, 2, 2, 3, 0 };
                 Ref<IndexBuffer> squareIB;
-                squareIB.reset(IndexBuffer::Create(squareIndices, sizeof(squareIndices) / sizeof(uint32_t)));
+                squareIB = IndexBuffer::Create(squareIndices, sizeof(squareIndices) / sizeof(uint32_t));
                 m_SquareVA->SetIndexBuffer(squareIB);
 
                 std::string vertexSrc = R"(
@@ -207,7 +209,8 @@ namespace Sarene
         public:
             SMEApp()
             {
-                PushLayer(new ExampleLayer());
+                //PushLayer(new ExampleLayer());
+                PushLayer(new EditorLayer());
             }
 
             ~SMEApp()
