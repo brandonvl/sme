@@ -2,6 +2,8 @@
 
 // For use by Sarene applications
 
+#include "Sarene/Core/Core.h"
+
 #include "Sarene/Core/Application.h"
 #include "Sarene/Core/Layer.h"
 #include "Sarene/Core/Log.h"

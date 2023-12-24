@@ -1,7 +1,7 @@
 #include "sarpch.h"
-#include "Buffer.h"
+#include "Sarene/Renderer/Buffer.h"
 
-#include "Renderer.h"
+#include "Sarene/Renderer/Renderer.h"
 #include "Platform/OpenGL/OpenGLBuffer.h"
 
 namespace Sarene

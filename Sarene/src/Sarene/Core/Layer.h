@@ -1,7 +1,7 @@
 #pragma once
 
-#include "Core.h"
-#include "Timestep.h"
+#include "Sarene/Core/Core.h"
+#include "Sarene/Core/Timestep.h"
 #include "Sarene/Events/Event.h"
 
 namespace Sarene

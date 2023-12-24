@@ -1,5 +1,5 @@
 #include "sarpch.h"
-#include "OpenGLVertexArray.h"
+#include "Platform/OpenGL/OpenGLVertexArray.h"
 
 #include <glad/glad.h>
 
@@ -9,17 +9,17 @@ namespace Sarene
 	{
 		switch (type)
 		{
-			case Sarene::ShaderDataType::Float:    return GL_FLOAT;
-			case Sarene::ShaderDataType::Float2:   return GL_FLOAT;
-			case Sarene::ShaderDataType::Float3:   return GL_FLOAT;
-			case Sarene::ShaderDataType::Float4:   return GL_FLOAT;
-			case Sarene::ShaderDataType::Mat3:     return GL_FLOAT;
-			case Sarene::ShaderDataType::Mat4:     return GL_FLOAT;
-			case Sarene::ShaderDataType::Int:      return GL_INT;
-			case Sarene::ShaderDataType::Int2:     return GL_INT;
-			case Sarene::ShaderDataType::Int3:     return GL_INT;
-			case Sarene::ShaderDataType::Int4:     return GL_INT;
-			case Sarene::ShaderDataType::Bool:     return GL_BOOL;
+			case ShaderDataType::Float:    return GL_FLOAT;
+			case ShaderDataType::Float2:   return GL_FLOAT;
+			case ShaderDataType::Float3:   return GL_FLOAT;
+			case ShaderDataType::Float4:   return GL_FLOAT;
+			case ShaderDataType::Mat3:     return GL_FLOAT;
+			case ShaderDataType::Mat4:     return GL_FLOAT;
+			case ShaderDataType::Int:      return GL_INT;
+			case ShaderDataType::Int2:     return GL_INT;
+			case ShaderDataType::Int3:     return GL_INT;
+			case ShaderDataType::Int4:     return GL_INT;
+			case ShaderDataType::Bool:     return GL_BOOL;
 		}
 
 		SAR_CORE_ASSERT(false, "Unknown ShaderDataType!");

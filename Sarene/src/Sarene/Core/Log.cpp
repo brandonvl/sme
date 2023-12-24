@@ -1,12 +1,12 @@
 #include "sarpch.h"
 
-#include "Log.h"
-#include "spdlog/sinks/stdout_color_sinks.h"
+#include "Sarene/Core/Log.h"
+#include <spdlog/sinks/stdout_color_sinks.h>
 
 namespace Sarene
 {
-	std::shared_ptr<spdlog::logger> Log::s_CoreLogger;
-	std::shared_ptr<spdlog::logger> Log::s_ClientLogger;
+	Ref<spdlog::logger> Log::s_CoreLogger;
+	Ref<spdlog::logger> Log::s_ClientLogger;
 
 	void Log::Init()
 	{

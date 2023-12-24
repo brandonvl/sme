@@ -1,8 +1,8 @@
 #pragma once
 
-#include "OrthographicCamera.h"
+#include "Sarene/Renderer/OrthographicCamera.h"
 
-#include "Texture.h"
+#include "Sarene/Renderer/Texture.h"
 
 namespace Sarene
 {

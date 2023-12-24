@@ -2,7 +2,7 @@
 
 #include "sarpch.h"
 
-#include "Core.h"
+#include "Sarene/Core/Core.h"
 #include "Sarene/Events/Event.h"
 
 namespace Sarene
@@ -41,6 +41,6 @@ namespace Sarene
 
 		virtual void* GetNativeWindow() const = 0;
 
-		static Window* Create(const WindowProps& props = WindowProps());
+		static Scope<Window> Create(const WindowProps& props = WindowProps());
 	};
 }

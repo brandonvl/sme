@@ -66,6 +66,7 @@ set(SARENE_SOURCES
 
     # Renderer Files
     src/Sarene/Renderer/Buffer.cpp
+    src/Sarene/Renderer/GraphicsContext.cpp
     src/Sarene/Renderer/OrthographicCamera.cpp
     src/Sarene/Renderer/RenderCommand.cpp
     src/Sarene/Renderer/Renderer.cpp

@@ -1,7 +1,7 @@
 #include "sarpch.h"
-#include "VertexArray.h"
+#include "Sarene/Renderer/VertexArray.h"
 
-#include "Renderer.h"
+#include "Sarene/Renderer/Renderer.h"
 #include "Platform/OpenGL/OpenGLVertexArray.h"
 
 namespace Sarene

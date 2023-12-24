@@ -1,17 +1,16 @@
 #pragma once
 
-#include "Core.h"
-#include "Layer.h"
+#include "Sarene/Core/Core.h"
+#include "Sarene/Core/Layer.h"
 
 #include <vector>
-
 
 namespace Sarene
 {
 	class LayerStack
 	{
 	public:
-		LayerStack();
+		LayerStack() = default;
 		~LayerStack();
 
 		void PushLayer(Layer* layer);

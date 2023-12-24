@@ -1,4 +1,5 @@
 #pragma once
+#include "Sarene/Core/Core.h"
 
 #ifdef SAR_PLATFORM_WINDOWS
 

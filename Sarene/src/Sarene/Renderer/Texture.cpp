@@ -1,7 +1,7 @@
 #include "sarpch.h"
-#include "Texture.h"
+#include "Sarene/Renderer/Texture.h"
 
-#include "Renderer.h"
+#include "Sarene/Renderer/Renderer.h"
 #include "Platform/OpenGL/OpenGLTexture.h"
 
 namespace Sarene

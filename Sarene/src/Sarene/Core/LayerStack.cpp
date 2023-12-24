@@ -1,13 +1,8 @@
 #include "sarpch.h"
-#include "LayerStack.h"
+#include "Sarene/Core/LayerStack.h"
 
 namespace Sarene
 {
-	LayerStack::LayerStack()
-	{
-
-	}
-
 	LayerStack::~LayerStack()
 	{
 		for (auto layer : m_Layers)

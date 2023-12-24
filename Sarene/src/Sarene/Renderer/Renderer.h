@@ -1,8 +1,8 @@
 #pragma once
 
-#include "RenderCommand.h"
-#include "OrthographicCamera.h"
-#include "Shader.h"
+#include "Sarene/Renderer/RenderCommand.h"
+#include "Sarene/Renderer/OrthographicCamera.h"
+#include "Sarene/Renderer/Shader.h"
 
 namespace Sarene
 {
@@ -10,6 +10,8 @@ namespace Sarene
 	{
 	public:
 		static void Init();
+		static void Shutdown();
+
 		static void OnWindowResize(uint32_t width, uint32_t height);
 		
 		static void BeginScene(OrthographicCamera& camera);

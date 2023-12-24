@@ -1,4 +1,5 @@
 #pragma once
+#include "sarpch.h"
 
 #include "Sarene/Core/Core.h"
 

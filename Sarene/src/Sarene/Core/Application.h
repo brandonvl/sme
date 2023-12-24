@@ -1,8 +1,8 @@
 #pragma once
 
-#include "Core.h"
+#include "Sarene/Core/Core.h"
 
-#include "Window.h"
+#include "Sarene/Core/Window.h"
 #include "LayerStack.h"
 #include "Sarene/Events/Event.h"
 #include "Sarene/Events/ApplicationEvent.h"
@@ -16,7 +16,7 @@ namespace Sarene
 	{
 	public:
 		Application();
-		virtual ~Application() = default;
+		virtual ~Application();
 
 		void Run();
 
