@@ -40,9 +40,12 @@ set(SARENE_SOURCES
 
     # Core files
     src/Sarene/Core/Application.cpp
+    src/Sarene/Core/Input.cpp
     src/Sarene/Core/Layer.cpp
     src/Sarene/Core/LayerStack.cpp
     src/Sarene/Core/Log.cpp
+    src/Sarene/Core/Window.cpp
+    
     src/Sarene/OrthographicCameraController.cpp
 
     # Events files
@@ -101,3 +104,7 @@ target_compile_definitions(Sarene PRIVATE
     _SILENCE_ALL_MS_EXT_DEPRECATION_WARNINGS
     $<$<CONFIG:Debug>:SAR_DEBUG>
 )
+
+if(WIN32)
+    target_compile_definitions(Sarene PRIVATE SAR_PLATFORM_WINDOWS)
+endif()

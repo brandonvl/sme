@@ -12,7 +12,7 @@
 
 #include "Sarene/Core/Input.h"
 #include "Sarene/Core/KeyCodes.h"
-#include "Sarene/Core/MouseButtonCodes.h"
+#include "Sarene/Core/MouseCodes.h"
 #include "Sarene/OrthographicCameraController.h"
 
 #include "Sarene/ImGui/ImGuiLayer.h"

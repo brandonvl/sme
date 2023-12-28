@@ -51,10 +51,20 @@ namespace Sarene
 		if (in)
 		{
 			in.seekg(0, std::ios::end); // seek to end of file
-			result.resize(in.tellg()); // get length of file
-			in.seekg(0, std::ios::beg); // seek to beginning of file
-			in.read(&result[0], result.size()); // read entire file
-			in.close(); // ifstream closes itself due to RAII
+			size_t size = in.tellg(); // get length of file
+
+			if (size != -1)
+			{
+				result.resize(in.tellg()); // get length of file
+				in.seekg(0, std::ios::beg); // seek to beginning of file
+				in.read(&result[0], result.size()); // read entire file
+				in.close(); // ifstream closes itself due to RAII
+			}
+			else
+			{
+				SAR_CORE_ERROR("Could not read from file '{0}'", filepath);
+			}
+			
 		}
 		else
 		{

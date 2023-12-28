@@ -1,9 +1,13 @@
 #include "sarpch.h"
 #include "Platform/Windows/WindowsWindow.h"
 
+#include "Sarene/Core/Input.h"
+
 #include "Sarene/Events/ApplicationEvent.h"
 #include "Sarene/Events/MouseEvent.h"
 #include "Sarene/Events/KeyEvent.h"
+
+#include "Sarene/Renderer/Renderer.h"
 
 #include "Platform/OpenGL/OpenGLContext.h"
 
@@ -14,11 +18,6 @@ namespace Sarene
 	static void GLFWErrorCallback(int error, const char* description)
 	{
 		SAR_CORE_ERROR("GLFW Error ({0}): {1}", error, description);
-	}
-
-	Scope<Window> Window::Create(const WindowProps& props)
-	{
-		return CreateScope<WindowsWindow>(props);
 	}
 
 	WindowsWindow::WindowsWindow(const WindowProps& props)
@@ -45,6 +44,13 @@ namespace Sarene
 			SAR_CORE_ASSERT(success, "Could not initialize GLFW!");
 			glfwSetErrorCallback(GLFWErrorCallback);
 		}
+
+		#ifdef SAR_DEBUG
+			if (Renderer::GetAPI() == RendererAPI::API::OpenGL)
+			{
+				glfwWindowHint(GLFW_OPENGL_DEBUG_CONTEXT, GLFW_TRUE);
+			}
+		#endif
 
 		m_Window = glfwCreateWindow((int)m_Data.Width, (int)m_Data.Height, m_Data.Title.c_str(), nullptr, nullptr);
 		++s_GLFWWindowCount;
@@ -82,19 +88,19 @@ namespace Sarene
 			{
 				case GLFW_PRESS:
 					{
-						KeyPressedEvent event(key, 0);
+						KeyPressedEvent event(static_cast<KeyCode>(key), 0);
 						data.EventCallback(event);
 						break;
 					}
 				case GLFW_RELEASE:
 					{
-						KeyReleasedEvent event(key);
+						KeyReleasedEvent event(static_cast<KeyCode>(key));
 						data.EventCallback(event);
 						break;
 					}
 				case GLFW_REPEAT:
 					{
-						KeyPressedEvent event(key, 1);
+						KeyPressedEvent event(static_cast<KeyCode>(key), 1);
 						data.EventCallback(event);
 						break;
 					}
@@ -105,7 +111,7 @@ namespace Sarene
 		{
 			WindowData& data = *(WindowData*)glfwGetWindowUserPointer(window);
 
-			KeyTypedEvent event(keycode);
+			KeyTypedEvent event(static_cast<KeyCode>(keycode));
 			data.EventCallback(event);
 		});
 
@@ -117,13 +123,13 @@ namespace Sarene
 			{
 				case GLFW_PRESS:
 					{
-						MouseButtonPressedEvent event(button);
+						MouseButtonPressedEvent event(static_cast<MouseCode>(button));
 						data.EventCallback(event);
 						break;
 					}
 				case GLFW_RELEASE:
 					{
-						MouseButtonReleasedEvent event(button);
+						MouseButtonReleasedEvent event(static_cast<MouseCode>(button));
 						data.EventCallback(event);
 						break;
 					};

@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Sarene/Events/Event.h"
+#include "Sarene/Core/Input.h"
 
 namespace Sarene
 {
@@ -67,25 +68,25 @@ namespace Sarene
 	class MouseButtonEvent : public Event
 	{
 	public:
-		int GetMouseButton() const
+		MouseCode GetMouseButton() const
 		{
 			return m_Button;
 		}
 
 		EVENT_CLASS_CATEGORY(EventCategoryMouse | EventCategoryInput | EventCategoryMouseButton)
 	protected:
-		MouseButtonEvent(const int button)
+		MouseButtonEvent(MouseCode button)
 			: m_Button(button)
 		{
 		}
 
-		int m_Button;
+		MouseCode m_Button;
 	};
 
 	class MouseButtonPressedEvent : public MouseButtonEvent
 	{
 	public:
-		MouseButtonPressedEvent(const int button)
+		MouseButtonPressedEvent(MouseCode button)
 			: MouseButtonEvent(button)
 		{
 		}
@@ -103,7 +104,7 @@ namespace Sarene
 	class MouseButtonReleasedEvent : public MouseButtonEvent
 	{
 	public:
-		MouseButtonReleasedEvent(const int button)
+		MouseButtonReleasedEvent(MouseCode button)
 			: MouseButtonEvent(button)
 		{
 		}
