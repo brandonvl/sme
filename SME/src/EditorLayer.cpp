@@ -35,7 +35,7 @@ namespace Sarene
         Renderer2D::BeginScene(m_CameraController.GetCamera());
         Renderer2D::DrawQuad( { -1.0f, 0.0f }, { 0.8f, 0.8f }, { 0.8f, 0.2f, 0.3f, 1.0f });
         Renderer2D::DrawQuad( { 0.5f, -0.5f }, { 0.5f, 0.75f }, { 0.2f, 0.3f, 0.8f, 1.0f });
-        Renderer2D::DrawQuad( { 0.0f, 0.0f, -0.1f }, { 5.0f, 5.0f }, m_CheckerboardTexture);
+        Renderer2D::DrawQuad( { 0.0f, 0.0f, -0.1f }, { 5.0f, 5.0f }, m_CheckerboardTexture, 10.0f, { 1.0f, 0.0f, 1.0f, 1.0f });
         Renderer2D::EndScene();
     }
 
